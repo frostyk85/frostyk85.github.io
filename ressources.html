@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ressources | Prénom Nom</title>
+  <meta name="description" content="Notes de cours, exercices, articles et autres ressources scientifiques.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-title" href="index.html">Prénom Nom</a>
+      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+      <nav class="site-nav">
+        <a href="index.html">Présentation</a>
+        <a class="active" href="ressources.html">Ressources</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="banner">
+    <div class="banner-inner">
+      <h1>Ressources</h1>
+      <p>Notes de cours, feuilles d'exercices, articles et autres documents, à télécharger librement.</p>
+    </div>
+  </section>
+
+  <main>
+    <input id="search" class="search-box" type="search" placeholder="Rechercher une ressource…" aria-label="Rechercher une ressource">
+    <p id="no-result" class="no-result">Aucune ressource ne correspond à votre recherche.</p>
+
+    <!--
+      Pour ajouter une ressource : copie un bloc <a class="card"> ci-dessous,
+      dépose ton fichier dans le dossier « documents/ » et adapte le lien (href).
+    -->
+
+    <section class="resource-section" id="cours">
+      <h2>Notes de cours</h2>
+      <div class="card-grid">
+        <a class="card" href="documents/cours-1.pdf">
+          <span class="card-title">Titre du cours 1</span>
+          <span class="card-desc">Courte description du contenu, du niveau visé et du public concerné.</span>
+          <span class="card-meta">PDF</span>
+        </a>
+        <a class="card" href="documents/cours-2.pdf">
+          <span class="card-title">Titre du cours 2</span>
+          <span class="card-desc">Courte description du contenu, du niveau visé et du public concerné.</span>
+          <span class="card-meta">PDF</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="resource-section" id="exercices">
+      <h2>Exercices et corrigés</h2>
+      <div class="card-grid">
+        <a class="card" href="documents/exercices-1.pdf">
+          <span class="card-title">Feuille d'exercices 1</span>
+          <span class="card-desc">Exercices associés au cours 1, avec indications.</span>
+          <span class="card-meta">PDF</span>
+        </a>
+        <a class="card" href="documents/corriges-1.pdf">
+          <span class="card-title">Corrigés de la feuille 1</span>
+          <span class="card-desc">Solutions détaillées des exercices.</span>
+          <span class="card-meta">PDF</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="resource-section" id="articles">
+      <h2>Articles et publications</h2>
+      <div class="card-grid">
+        <a class="card" href="documents/article-1.pdf">
+          <span class="card-title">Titre de l'article</span>
+          <span class="card-desc">Auteurs, revue, année. Résumé en une ou deux phrases.</span>
+          <span class="card-meta">PDF</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="resource-section" id="presentations">
+      <h2>Présentations</h2>
+      <div class="card-grid">
+        <a class="card" href="documents/presentation-1.pdf">
+          <span class="card-title">Titre de la présentation</span>
+          <span class="card-desc">Conférence ou séminaire, lieu et date.</span>
+          <span class="card-meta">PDF</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="resource-section" id="liens">
+      <h2>Liens utiles</h2>
+      <div class="card-grid">
+        <a class="card" href="https://arxiv.org" target="_blank" rel="noopener">
+          <span class="card-title">arXiv</span>
+          <span class="card-desc">Archive ouverte de prépublications scientifiques.</span>
+          <span class="card-meta">Lien externe</span>
+        </a>
+        <a class="card" href="https://hal.science" target="_blank" rel="noopener">
+          <span class="card-title">HAL</span>
+          <span class="card-desc">Archive ouverte pluridisciplinaire pour les productions de la recherche française.</span>
+          <span class="card-meta">Lien externe</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      Prénom Nom, fonction, institution.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
