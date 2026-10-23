@@ -1,136 +1,485 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Ressources | Prénom Nom</title>
-  <meta name="description" content="Notes de cours, exercices, articles et autres ressources scientifiques.">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
+/* ==========================================================
+   Site personnel – ressources scientifiques
+   Couleur principale : #5C5D8D
+   ========================================================== */
 
-  <header class="site-header">
-    <div class="header-inner">
-      <a class="site-title" href="index.html">Prénom Nom</a>
-      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
-      <nav class="site-nav">
-        <a href="index.html">Présentation</a>
-        <a class="active" href="ressources.html">Ressources</a>
-      </nav>
-    </div>
-  </header>
+:root {
+  --accent: #5C5D8D;
+  --accent-dark: #444566;
+  --accent-light: #ececf4;
+  --accent-faint: #f6f6fa;
+  --accent2: #D33E43;
+  --accent2-dark: #a92c31;
+  --text: #24242e;
+  --muted: #6b6b7b;
+  --border: #dcdce6;
+  --bg: #ffffff;
+  --max-width: 960px;
+}
 
-  <section class="banner">
-    <div class="banner-inner">
-      <h1>Ressources</h1>
-      <p>Notes de cours, feuilles d'exercices, articles et autres documents, à télécharger librement.</p>
-    </div>
-  </section>
+* { box-sizing: border-box; }
 
-  <main>
-    <input id="search" class="search-box" type="search" placeholder="Rechercher une ressource…" aria-label="Rechercher une ressource">
-    <p id="no-result" class="no-result">Aucune ressource ne correspond à votre recherche.</p>
+html { scroll-behavior: smooth; }
 
-    <!--
-      Pour ajouter une ressource : copie un bloc <a class="card"> ci-dessous,
-      dépose ton fichier dans le dossier « documents/ » et adapte le lien (href).
-    -->
-<section class="resource-section">
-  <h2>Document Ressources</h2>
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--bg);
+}
 
-  <article class="featured">
-    <a class="featured-preview" href="documents/Document ressources STEM.pdf" target="_blank" rel="noopener"
-       aria-label="Ouvrir le PDF">
-      <img src="images/apercu-mon-cours.png" alt="Aperçu de la première page de Titre du document">
-    </a>
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover { color: var(--accent-dark); text-decoration: underline; }
 
-    <h3 class="featured-title">Ressources STEM</h3>
-    <p class="featured-desc">
-      Voici un document qui réference les meilleures ressources sur les sujets scientifiques que j'ai pu trouver (Last update: Juillet 2026)
-    </p>
-    <p class="featured-meta">PDF · 17 pages · 423 kb · Mis à jour en juillet 2026</p>
+/* ---------- En-tête et navigation ---------- */
 
-    <a class="button" href="documents/mon-cours.pdf" target="_blank" rel="noopener">Ouvrir le PDF</a>
-    <a class="button button-outline" href="documents/mon-cours.pdf" download>Télécharger</a>
-  </article>
-</section>
-    <section class="resource-section" id="cours">
-      <h2>Notes de cours</h2>
-      <div class="card-grid">
-        <a class="card" href="documents/cours-1.pdf">
-          <span class="card-title">Titre du cours 1</span>
-          <span class="card-desc">Courte description du contenu, du niveau visé et du public concerné.</span>
-          <span class="card-meta">PDF</span>
-        </a>
-        <a class="card" href="documents/cours-2.pdf">
-          <span class="card-title">Titre du cours 2</span>
-          <span class="card-desc">Courte description du contenu, du niveau visé et du public concerné.</span>
-          <span class="card-meta">PDF</span>
-        </a>
-      </div>
-    </section>
+.site-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
 
-    <section class="resource-section" id="exercices">
-      <h2>Exercices et corrigés</h2>
-      <div class="card-grid">
-        <a class="card" href="documents/exercices-1.pdf">
-          <span class="card-title">Feuille d'exercices 1</span>
-          <span class="card-desc">Exercices associés au cours 1, avec indications.</span>
-          <span class="card-meta">PDF</span>
-        </a>
-        <a class="card" href="documents/corriges-1.pdf">
-          <span class="card-title">Corrigés de la feuille 1</span>
-          <span class="card-desc">Solutions détaillées des exercices.</span>
-          <span class="card-meta">PDF</span>
-        </a>
-      </div>
-    </section>
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 64px;
+}
 
-    <section class="resource-section" id="articles">
-      <h2>Articles et publications</h2>
-      <div class="card-grid">
-        <a class="card" href="documents/article-1.pdf">
-          <span class="card-title">Titre de l'article</span>
-          <span class="card-desc">Auteurs, revue, année. Résumé en une ou deux phrases.</span>
-          <span class="card-meta">PDF</span>
-        </a>
-      </div>
-    </section>
+.site-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: var(--accent);
+}
+.site-title:hover { text-decoration: none; color: var(--accent-dark); }
 
-    <section class="resource-section" id="presentations">
-      <h2>Présentations</h2>
-      <div class="card-grid">
-        <a class="card" href="documents/presentation-1.pdf">
-          <span class="card-title">Titre de la présentation</span>
-          <span class="card-desc">Conférence ou séminaire, lieu et date.</span>
-          <span class="card-meta">PDF</span>
-        </a>
-      </div>
-    </section>
+.nav-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 1.2rem;
+  color: var(--accent);
+  padding: 2px 10px;
+  cursor: pointer;
+}
 
-    <section class="resource-section" id="liens">
-      <h2>Liens utiles</h2>
-      <div class="card-grid">
-        <a class="card" href="https://arxiv.org" target="_blank" rel="noopener">
-          <span class="card-title">arXiv</span>
-          <span class="card-desc">Archive ouverte de prépublications scientifiques.</span>
-          <span class="card-meta">Lien externe</span>
-        </a>
-        <a class="card" href="https://hal.science" target="_blank" rel="noopener">
-          <span class="card-title">HAL</span>
-          <span class="card-desc">Archive ouverte pluridisciplinaire pour les productions de la recherche française.</span>
-          <span class="card-meta">Lien externe</span>
-        </a>
-      </div>
-    </section>
-  </main>
+.site-nav { display: flex; gap: 28px; }
 
-  <footer class="site-footer">
-    <div class="footer-inner">
-      Prénom Nom, fonction, institution.
-    </div>
-  </footer>
+.site-nav a {
+  color: var(--text);
+  font-size: 0.95rem;
+  padding: 4px 0;
+  border-bottom: 2px solid transparent;
+}
+.site-nav a:hover {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom-color: var(--accent-light);
+}
+.site-nav a.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  font-weight: 600;
+}
 
-  <script src="script.js"></script>
-</body>
-</html>
+/* ---------- Bandeau ---------- */
+
+.banner {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+  color: #fff;
+}
+.banner-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 56px 24px 52px;
+}
+.banner h1 {
+  margin: 0 0 10px;
+  font-size: 2.2rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+.banner p {
+  margin: 0;
+  max-width: 640px;
+  font-size: 1.1rem;
+  opacity: 0.92;
+}
+
+/* ---------- Contenu ---------- */
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 40px 24px 64px;
+}
+
+h2 {
+  font-size: 1.45rem;
+  margin: 48px 0 16px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--accent-light);
+  color: var(--accent);
+}
+h2:first-child { margin-top: 0; }
+
+h3 { font-size: 1.1rem; margin: 24px 0 8px; }
+
+p { margin: 0 0 16px; }
+
+.lead { font-size: 1.1rem; color: var(--text); }
+
+/* Présentation : photo + texte */
+.about {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 32px;
+  align-items: start;
+}
+.portrait {
+  width: 200px;
+  height: 240px;
+  background: var(--accent-light);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 12px;
+  overflow: hidden;
+}
+.portrait img { width: 100%; height: 100%; object-fit: cover; }
+
+/* Listes d'infos */
+.info-list { list-style: none; padding: 0; margin: 0 0 16px; }
+.info-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+.info-list li:last-child { border-bottom: none; }
+.info-list strong { color: var(--accent); }
+
+/* ---------- Cartes de ressources ---------- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.card {
+  display: block;
+  padding: 18px 20px;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 4px;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.15s, box-shadow 0.15s;
+}
+.card:hover {
+  background: var(--accent-faint);
+  box-shadow: 0 2px 8px rgba(92, 93, 141, 0.15);
+  text-decoration: none;
+  color: var(--text);
+}
+.card-title {
+  display: block;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+.card-desc {
+  display: block;
+  font-size: 0.93rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.card-meta {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+
+/* Recherche */
+.search-box {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  margin-bottom: 8px;
+  font-family: inherit;
+}
+.search-box:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+.no-result { display: none; color: var(--muted); font-style: italic; }
+
+/* Index des ressources */
+.index-list {
+  columns: 2;
+  column-gap: 32px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.index-list li { padding: 3px 0; break-inside: avoid; }
+
+/* ---------- Pied de page ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--accent-faint);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 720px) {
+  body { font-size: 16px; }
+
+  .nav-toggle { display: block; }
+
+  .site-nav {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 24px 16px;
+  }
+  .site-nav.open { display: flex; }
+  .site-nav a { padding: 10px 0; border-bottom: 1px solid var(--border); }
+
+  .banner h1 { font-size: 1.7rem; }
+  .about { grid-template-columns: 1fr; }
+  .portrait { width: 160px; height: 192px; }
+  .card-grid { grid-template-columns: 1fr; }
+  .index-list { columns: 1; }
+}
+
+
+/* ==========================================================
+   Mise à jour : police des titres, 2e couleur, à la une,
+   couvertures, étiquettes de niveau
+   Seconde couleur : #D33E43 (variable --accent2)
+   ========================================================== */
+
+/* ---------- Police vivante pour les h1 ---------- */
+
+.banner h1 {
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 2.8rem;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+.banner { border-bottom: 5px solid var(--accent2); }
+
+/* ---------- Touches de contraste (#D33E43) ---------- */
+
+h2 { position: relative; }
+h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 56px;
+  height: 2px;
+  background: var(--accent2);
+}
+.card:hover .card-title { color: var(--accent2); }
+
+/* ---------- Ressource mise en avant (bloc centré) ---------- */
+
+.spotlight {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 40px;
+  align-items: center;
+  max-width: 780px;
+  margin: 0 auto 36px;
+  padding: 32px;
+  background: var(--accent-faint);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--accent2);
+  border-radius: 8px;
+}
+
+.spotlight-cover {
+  display: block;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(68, 69, 102, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.spotlight-cover:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(68, 69, 102, 0.4);
+}
+.spotlight-cover img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+.kicker {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent2);
+  margin-bottom: 6px;
+}
+
+.spotlight-title {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.6rem;
+  line-height: 1.25;
+  margin: 0 0 12px;
+  padding: 0;
+  border: none;
+  color: var(--accent);
+}
+.spotlight-title::after { display: none; }
+
+.spotlight-desc { margin: 14px 0 8px; }
+.spotlight-meta { margin: 0 0 18px; font-size: 0.85rem; color: var(--muted); }
+
+.actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+.button {
+  display: inline-block;
+  padding: 9px 20px;
+  border: 2px solid var(--accent);
+  border-radius: 4px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.button:hover { background: var(--accent-dark); border-color: var(--accent-dark); color: #fff; text-decoration: none; }
+.button-red { background: var(--accent2); border-color: var(--accent2); }
+.button-red:hover { background: var(--accent2-dark); border-color: var(--accent2-dark); }
+.button-outline { background: transparent; color: var(--accent); }
+.button-outline:hover { background: var(--accent-light); color: var(--accent-dark); }
+
+/* ---------- Étiquettes : niveau et type ---------- */
+
+.tags, .card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.card-tags { margin-top: 10px; }
+.card-tags .card-meta { margin-top: 0; }
+
+.tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+
+.level {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 2px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.level-lycee    { background: #2e7d5b; } /* vert   : débutant */
+.level-licence  { background: #2b6f9c; } /* bleu   : premiers cycles */
+.level-master   { background: #5C5D8D; } /* violet : avancé */
+.level-doctorat { background: #D33E43; } /* rouge  : recherche */
+.level-tous     { background: #6b6b7b; } /* gris   : tous niveaux */
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 0 24px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.legend-label { font-weight: 600; margin-right: 2px; }
+
+/* ---------- Carte avec image de couverture paysage ---------- */
+
+.card.has-cover { padding: 0; overflow: hidden; }
+.card-cover {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-bottom: 1px solid var(--border);
+}
+.card-body { display: block; padding: 16px 20px 18px; }
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 720px) {
+  .banner h1 { font-size: 2.1rem; }
+  .spotlight {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px 20px;
+    text-align: center;
+  }
+  .spotlight-cover { max-width: 220px; margin: 0 auto; }
+  .tags, .actions { justify-content: center; }
+}
+
+/* ---------- Corrections d'espacement ---------- */
+.resource-section { margin-top: 48px; }
+.card-grid { align-items: start; }
+.search-box { margin-bottom: 0; }
