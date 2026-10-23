@@ -8,6 +8,8 @@
   --accent-dark: #444566;
   --accent-light: #ececf4;
   --accent-faint: #f6f6fa;
+  --accent2: #D33E43;
+  --accent2-dark: #a92c31;
   --text: #24242e;
   --muted: #6b6b7b;
   --border: #dcdce6;
@@ -290,40 +292,101 @@ p { margin: 0 0 16px; }
   .card-grid { grid-template-columns: 1fr; }
   .index-list { columns: 1; }
 }
-/* ---------- Document mis en avant (centré) ---------- */
 
-.featured {
-  max-width: 560px;
-  margin: 24px auto;
-  text-align: center;
+
+/* ==========================================================
+   Mise à jour : police des titres, 2e couleur, à la une,
+   couvertures, étiquettes de niveau
+   Seconde couleur : #D33E43 (variable --accent2)
+   ========================================================== */
+
+/* ---------- Police vivante pour les h1 ---------- */
+
+.banner h1 {
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 2.8rem;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+.banner { border-bottom: 5px solid var(--accent2); }
+
+/* ---------- Touches de contraste (#D33E43) ---------- */
+
+h2 { position: relative; }
+h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 56px;
+  height: 2px;
+  background: var(--accent2);
+}
+.card:hover .card-title { color: var(--accent2); }
+
+/* ---------- Ressource mise en avant (bloc centré) ---------- */
+
+.spotlight {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 40px;
+  align-items: center;
+  max-width: 780px;
+  margin: 0 auto 36px;
+  padding: 32px;
+  background: var(--accent-faint);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--accent2);
+  border-radius: 8px;
 }
 
-.featured-preview {
-  display: inline-block;
-  border: 1px solid var(--border);
-  border-radius: 6px;
+.spotlight-cover {
+  display: block;
+  border-radius: 4px;
   overflow: hidden;
-  box-shadow: 0 4px 14px rgba(92, 93, 141, 0.2);
+  box-shadow: 0 6px 18px rgba(68, 69, 102, 0.3);
   transition: transform 0.2s, box-shadow 0.2s;
 }
-.featured-preview:hover {
+.spotlight-cover:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 22px rgba(92, 93, 141, 0.3);
+  box-shadow: 0 10px 26px rgba(68, 69, 102, 0.4);
 }
-.featured-preview img {
+.spotlight-cover img {
   display: block;
   width: 100%;
-  max-width: 320px;
-  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
 }
 
-.featured-title { margin: 20px 0 8px; font-size: 1.3rem; color: var(--accent); }
-.featured-desc  { margin: 0 auto 10px; color: var(--text); }
-.featured-meta  { margin: 0 0 18px; font-size: 0.85rem; color: var(--muted); }
+.kicker {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent2);
+  margin-bottom: 6px;
+}
+
+.spotlight-title {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.6rem;
+  line-height: 1.25;
+  margin: 0 0 12px;
+  padding: 0;
+  border: none;
+  color: var(--accent);
+}
+.spotlight-title::after { display: none; }
+
+.spotlight-desc { margin: 14px 0 8px; }
+.spotlight-meta { margin: 0 0 18px; font-size: 0.85rem; color: var(--muted); }
+
+.actions { display: flex; flex-wrap: wrap; gap: 10px; }
 
 .button {
   display: inline-block;
-  margin: 4px 6px;
   padding: 9px 20px;
   border: 2px solid var(--accent);
   border-radius: 4px;
@@ -333,5 +396,90 @@ p { margin: 0 0 16px; }
   font-size: 0.95rem;
 }
 .button:hover { background: var(--accent-dark); border-color: var(--accent-dark); color: #fff; text-decoration: none; }
+.button-red { background: var(--accent2); border-color: var(--accent2); }
+.button-red:hover { background: var(--accent2-dark); border-color: var(--accent2-dark); }
 .button-outline { background: transparent; color: var(--accent); }
 .button-outline:hover { background: var(--accent-light); color: var(--accent-dark); }
+
+/* ---------- Étiquettes : niveau et type ---------- */
+
+.tags, .card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.card-tags { margin-top: 10px; }
+.card-tags .card-meta { margin-top: 0; }
+
+.tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+
+.level {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 2px 9px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.level-lycee    { background: #2e7d5b; } /* vert   : débutant */
+.level-licence  { background: #2b6f9c; } /* bleu   : premiers cycles */
+.level-master   { background: #5C5D8D; } /* violet : avancé */
+.level-doctorat { background: #D33E43; } /* rouge  : recherche */
+.level-tous     { background: #6b6b7b; } /* gris   : tous niveaux */
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 0 0 24px;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.legend-label { font-weight: 600; margin-right: 2px; }
+
+/* ---------- Carte avec image de couverture paysage ---------- */
+
+.card.has-cover { padding: 0; overflow: hidden; }
+.card-cover {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-bottom: 1px solid var(--border);
+}
+.card-body { display: block; padding: 16px 20px 18px; }
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 720px) {
+  .banner h1 { font-size: 2.1rem; }
+  .spotlight {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 24px 20px;
+    text-align: center;
+  }
+  .spotlight-cover { max-width: 220px; margin: 0 auto; }
+  .tags, .actions { justify-content: center; }
+}
+
+/* ---------- Corrections d'espacement ---------- */
+.resource-section { margin-top: 48px; }
+.card-grid { align-items: start; }
+.search-box { margin-bottom: 0; }
