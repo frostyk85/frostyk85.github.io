@@ -14,6 +14,7 @@ if (search) {
   const cards = document.querySelectorAll('.card');
   const sections = document.querySelectorAll('.resource-section');
   const empty = document.getElementById('no-result');
+  const spotlight = document.getElementById('spotlight');
 
   const normalise = (s) =>
     s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
@@ -21,6 +22,9 @@ if (search) {
   search.addEventListener('input', () => {
     const q = normalise(search.value.trim());
     let total = 0;
+
+    // Masque le bloc « À la une » pendant une recherche
+    if (spotlight) spotlight.style.display = q ? 'none' : '';
 
     cards.forEach((card) => {
       const match = normalise(card.textContent).includes(q);
