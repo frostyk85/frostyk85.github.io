@@ -290,3 +290,48 @@ p { margin: 0 0 16px; }
   .card-grid { grid-template-columns: 1fr; }
   .index-list { columns: 1; }
 }
+/* ---------- Document mis en avant (centré) ---------- */
+
+.featured {
+  max-width: 560px;
+  margin: 24px auto;
+  text-align: center;
+}
+
+.featured-preview {
+  display: inline-block;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(92, 93, 141, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.featured-preview:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 22px rgba(92, 93, 141, 0.3);
+}
+.featured-preview img {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+}
+
+.featured-title { margin: 20px 0 8px; font-size: 1.3rem; color: var(--accent); }
+.featured-desc  { margin: 0 auto 10px; color: var(--text); }
+.featured-meta  { margin: 0 0 18px; font-size: 0.85rem; color: var(--muted); }
+
+.button {
+  display: inline-block;
+  margin: 4px 6px;
+  padding: 9px 20px;
+  border: 2px solid var(--accent);
+  border-radius: 4px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.button:hover { background: var(--accent-dark); border-color: var(--accent-dark); color: #fff; text-decoration: none; }
+.button-outline { background: transparent; color: var(--accent); }
+.button-outline:hover { background: var(--accent-light); color: var(--accent-dark); }
