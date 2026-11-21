@@ -4,21 +4,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Ressources | Nans Brucher</title>
-  <meta name="description" content="Notes de cours, exercices, articles et autres ressources scientifiques.">
+  <meta name="description" content="Notes de cours, exercices, articles et autres ressources scientifiques (FR).">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="alternate" hreflang="fr" href="ressources-fr.html">
+  <link rel="alternate" hreflang="en" href="resources-en.html">
 </head>
 <body>
-
   <header class="site-header">
     <div class="header-inner">
       <a class="site-title" href="index.html">Nans Brucher</a>
-      <button class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+      <button type="button" class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
       <nav class="site-nav">
         <a href="index.html">Présentation</a>
-        <a class="active" href="ressources.html">Ressources</a>
+        <a href="enseignement.html">Enseignement</a>
+        <a class="active" href="ressources-fr.html">Ressources (FR)</a>
+        <a href="resources-en.html">Resources (EN)</a>
       </nav>
     </div>
   </header>
@@ -26,22 +29,16 @@
   <section class="banner">
     <div class="banner-inner">
       <h1>Ressources</h1>
-      <p>Notes de cours, feuilles d'exercices, articles et autres documents, à télécharger librement.</p>
+      <p>Notes de cours, feuilles d'exercices, articles et autres documents à télécharger librement.</p>
     </div>
   </section>
 
-  <main>
-
-    <!-- =====================================================
-         RESSOURCE MISE EN AVANT
-         Couverture portrait (rapport 3:4, ex. 600 × 800 px) à gauche,
-         description à droite. Tout le bloc est centré.
-         Pour changer de ressource : modifie l'image, les liens et les textes.
-         ===================================================== -->
-    <article class="spotlight" id="spotlight">
-      <a class="spotlight-cover" href="documents/cours-1.pdf" target="_blank" rel="noopener"
-         aria-label="Ouvrir le PDF : Titre de la ressource mise en avant">
-        <img src="https://github.com/user-attachments/assets/7ce20623-691a-4dca-964b-7d391cf30270" alt="Première de couverture : Titre de la ressource mise en avant">
+  <main id="main-content">
+    <!-- Ressource mise en avant -->
+    <article class="spotlight">
+      <a class="spotlight-cover" href="documents/cours-1.pdf" target="_blank" rel="noopener" aria-label="Ouvrir le PDF : Document de ressources scientifiques">
+        <!-- Couverture à remplacer par image réelle -->
+        <img src="images/cover-ressource.jpg" alt="Première de couverture : Document de ressources scientifiques">
       </a>
       <div class="spotlight-body">
         <span class="kicker">À la une</span>
@@ -52,19 +49,19 @@
           <span class="tag">17 pages</span>
         </div>
         <p class="spotlight-desc">
-          Document qui réfrence les ressources que je trouve les plus pertinentes en maths et physique pour tous les niveaux et centres d'intérets.
+          Document qui répertorie les ressources les plus pertinentes en maths et physique pour différents niveaux et centres d'intérêt.
         </p>
         <p class="spotlight-meta">Mis à jour en juillet 2026</p>
         <div class="actions">
-          <a class="button button-red" href="documents/Document ressources STEM.pdf" target="_blank" rel="noopener">Ouvrir le PDF</a>
-          <a class="button button-outline" href="documents/Document ressources STEM.pdf" download>Télécharger</a>
+          <a class="button button-red" href="documents/Document-ressources-STEM.pdf" target="_blank" rel="noopener">Ouvrir le PDF</a>
+          <a class="button button-outline" href="documents/Document-ressources-STEM.pdf" download>Télécharger</a>
         </div>
       </div>
     </article>
 
     <!-- Légende des niveaux -->
     <div class="legend" aria-label="Légende des niveaux">
-      <span class="legend-label">Niveaux :</span>
+      <span class="legend-label">Niveaux&nbsp;:</span>
       <span class="level level-lycee">Lycée</span>
       <span class="level level-licence">Licence</span>
       <span class="level level-master">Master</span>
@@ -75,28 +72,21 @@
     <input id="search" class="search-box" type="search" placeholder="Rechercher (titre, thème, niveau)…" aria-label="Rechercher une ressource">
     <p id="no-result" class="no-result">Aucune ressource ne correspond à votre recherche.</p>
 
-    <!--
-      Pour ajouter une ressource : copie un bloc <a class="card"> ci-dessous,
-      dépose ton fichier dans le dossier « documents/ » et adapte le lien (href).
-
-      Niveaux disponibles (une seule classe par ressource) :
-        level-lycee · level-licence · level-master · level-doctorat · level-tous
-    -->
-
+    <!-- Section Notes de cours -->
     <section class="resource-section" id="cours">
       <h2>Notes de cours</h2>
       <div class="card-grid">
         <a class="card" href="documents/cours-1.pdf">
-          <span class="card-title">Titre du cours 1</span>
-          <span class="card-desc">Courte description du contenu, du niveau visé et du public concerné.</span>
+          <span class="card-title">Titre du cours 1</span>
+          <span class="card-desc">Courte description du contenu, niveau et public concerné.</span>
           <span class="card-tags">
             <span class="level level-lycee">Lycée</span>
             <span class="card-meta">PDF</span>
           </span>
         </a>
         <a class="card" href="documents/cours-2.pdf">
-          <span class="card-title">Titre du cours 2</span>
-          <span class="card-desc">Courte description du contenu, du niveau visé et du public concerné.</span>
+          <span class="card-title">Titre du cours 2</span>
+          <span class="card-desc">Courte description du contenu, niveau et public concerné.</span>
           <span class="card-tags">
             <span class="level level-master">Master</span>
             <span class="card-meta">PDF</span>
@@ -105,19 +95,20 @@
       </div>
     </section>
 
+    <!-- Section Exercices -->
     <section class="resource-section" id="exercices">
       <h2>Exercices et corrigés</h2>
       <div class="card-grid">
         <a class="card" href="documents/exercices-1.pdf">
-          <span class="card-title">Feuille d'exercices 1</span>
-          <span class="card-desc">Exercices associés au cours 1, avec indications.</span>
+          <span class="card-title">Feuille d'exercices 1</span>
+          <span class="card-desc">Exercices associés au cours 1, avec indications.</span>
           <span class="card-tags">
             <span class="level level-licence">Licence</span>
             <span class="card-meta">PDF</span>
           </span>
         </a>
         <a class="card" href="documents/corriges-1.pdf">
-          <span class="card-title">Corrigés de la feuille 1</span>
+          <span class="card-title">Corrigés de la feuille 1</span>
           <span class="card-desc">Solutions détaillées des exercices.</span>
           <span class="card-tags">
             <span class="level level-licence">Licence</span>
@@ -127,6 +118,7 @@
       </div>
     </section>
 
+    <!-- Section Articles -->
     <section class="resource-section" id="articles">
       <h2>Articles et publications</h2>
       <div class="card-grid">
@@ -141,29 +133,24 @@
       </div>
     </section>
 
-    <!--
-      PRÉSENTATIONS : l'image de couverture est facultative.
-      Format paysage conseillé : 16:9 (ex. 1280 × 720 px).
-      Avec image : garde la ligne <img class="card-cover"> et le <div class="card-body">.
-      Sans image : utilise une carte simple (voir la seconde carte ci-dessous).
-    -->
+    <!-- Section Présentations -->
     <section class="resource-section" id="presentations">
       <h2>Présentations</h2>
       <div class="card-grid">
-        <a class="card has-cover" href="documents/Th. Catégories et physique.pdf">
-          <img class="card-cover" src="https://github.com/user-attachments/assets/248c626e-d854-4a9e-ae81-d6cdb72c2d1f" alt="Première diapositive : Titre de la présentation">
+        <a class="card has-cover" href="documents/presentation-1.pdf">
+          <img class="card-cover" src="images/cover-presentation-1.jpg" alt="Première diapositive : Titre de la présentation">
           <span class="card-body">
-            <span class="card-title">TQFT et Théorie des catégories</span>
-            <span class="card-desc">école d'été Les Gustins 2026</span>
+            <span class="card-title">Titre de la présentation</span>
+            <span class="card-desc">Contexte ou conférence, année.</span>
             <span class="card-tags">
-              <span class="level level-license">License</span>
+              <span class="level level-master">Master</span>
               <span class="card-meta">PDF</span>
             </span>
           </span>
         </a>
         <a class="card" href="documents/presentation-2.pdf">
           <span class="card-title">Présentation sans image de couverture</span>
-          <span class="card-desc">La couverture est facultative : cette carte s'affiche sans image.</span>
+          <span class="card-desc">Cette carte s'affiche sans image.</span>
           <span class="card-tags">
             <span class="level level-tous">Tous niveaux</span>
             <span class="card-meta">PDF</span>
@@ -172,6 +159,7 @@
       </div>
     </section>
 
+    <!-- Section Liens utiles -->
     <section class="resource-section" id="liens">
       <h2>Liens utiles</h2>
       <div class="card-grid">
@@ -185,7 +173,7 @@
         </a>
         <a class="card" href="https://hal.science" target="_blank" rel="noopener">
           <span class="card-title">HAL</span>
-          <span class="card-desc">Archive ouverte pluridisciplinaire pour les productions de la recherche française.</span>
+          <span class="card-desc">Archive ouverte pluridisciplinaire pour la recherche française.</span>
           <span class="card-tags">
             <span class="level level-tous">Tous niveaux</span>
             <span class="card-meta">Lien externe</span>
@@ -197,7 +185,7 @@
 
   <footer class="site-footer">
     <div class="footer-inner">
-      Prénom Nom, fonction, institution.
+      © Nans Brucher – <em>Fonction, Institution</em>.
     </div>
   </footer>
 
