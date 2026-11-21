@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#5c5d8d">
   <title>Ressources | Nans Brucher</title>
-  <meta name="description" content="Notes de cours, exercices, articles et autres ressources scientifiques (FR).">
+  <meta name="description" content="Notes de cours, exercices, articles et autres ressources scientifiques en français.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&display=swap" rel="stylesheet">
@@ -13,182 +14,166 @@
   <link rel="alternate" hreflang="en" href="resources-en.html">
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Aller au contenu</a>
   <header class="site-header">
     <div class="header-inner">
-      <a class="site-title" href="index.html">Nans Brucher</a>
-      <button type="button" class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
-      <nav class="site-nav">
+      <a class="site-title" href="index.html" aria-label="Nans Brucher — accueil">Nans Brucher</a>
+      <button type="button" class="nav-toggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="primary-navigation">☰</button>
+      <nav class="site-nav" id="primary-navigation" aria-label="Navigation principale">
         <a href="index.html">Présentation</a>
         <a href="enseignement.html">Enseignement</a>
-        <a class="active" href="ressources-fr.html">Ressources (FR)</a>
-        <a href="resources-en.html">Resources (EN)</a>
+        <a class="active" href="ressources-fr.html" aria-current="page">Ressources (FR)</a>
+        <a href="resources-en.html" lang="en">Resources (EN)</a>
       </nav>
     </div>
   </header>
 
-  <section class="banner">
+  <section class="banner" aria-labelledby="page-title">
     <div class="banner-inner">
-      <h1>Ressources</h1>
-      <p>Notes de cours, feuilles d'exercices, articles et autres documents à télécharger librement.</p>
+      <p class="eyebrow">Bibliothèque scientifique</p>
+      <h1 id="page-title">Ressources</h1>
+      <p>Notes de cours, feuilles d'exercices, articles et présentations à consulter ou télécharger librement.</p>
     </div>
   </section>
 
   <main id="main-content">
-    <!-- Ressource mise en avant -->
-    <article class="spotlight">
-      <a class="spotlight-cover" href="documents/cours-1.pdf" target="_blank" rel="noopener" aria-label="Ouvrir le PDF : Document de ressources scientifiques">
-        <!-- Couverture à remplacer par image réelle -->
-        <img src="images/cover-ressource.jpg" alt="Première de couverture : Document de ressources scientifiques">
-      </a>
-      <div class="spotlight-body">
-        <span class="kicker">À la une</span>
-        <h2 class="spotlight-title">Document de ressources scientifiques</h2>
-        <div class="tags">
-          <span class="level level-tous">Tous niveaux</span>
-          <span class="tag">PDF</span>
-          <span class="tag">17 pages</span>
+    <section class="page-section featured-section" aria-labelledby="featured-title">
+      <article class="spotlight">
+        <a class="spotlight-cover" href="documents/Document-ressources-STEM.pdf" target="_blank" rel="noopener" aria-label="Ouvrir le document de ressources scientifiques au format PDF">
+          <img src="images/cover-ressource.jpg" alt="Couverture du document de ressources scientifiques">
+        </a>
+        <div class="spotlight-body">
+          <span class="kicker">À la une</span>
+          <h2 class="spotlight-title" id="featured-title">Document de ressources scientifiques</h2>
+          <div class="tags">
+            <span class="level level-tous">Tous niveaux</span>
+            <span class="tag">PDF</span>
+            <span class="tag">17 pages</span>
+          </div>
+          <p class="spotlight-desc">Un répertoire de ressources pertinentes en mathématiques et en physique, pour différents niveaux et centres d'intérêt.</p>
+          <p class="spotlight-meta">Mis à jour en juillet 2026</p>
+          <div class="actions">
+            <a class="button button-red" href="documents/Document-ressources-STEM.pdf" target="_blank" rel="noopener">Ouvrir le PDF</a>
+            <a class="button button-outline" href="documents/Document-ressources-STEM.pdf" download>Télécharger</a>
+          </div>
         </div>
-        <p class="spotlight-desc">
-          Document qui répertorie les ressources les plus pertinentes en maths et physique pour différents niveaux et centres d'intérêt.
-        </p>
-        <p class="spotlight-meta">Mis à jour en juillet 2026</p>
-        <div class="actions">
-          <a class="button button-red" href="documents/Document-ressources-STEM.pdf" target="_blank" rel="noopener">Ouvrir le PDF</a>
-          <a class="button button-outline" href="documents/Document-ressources-STEM.pdf" download>Télécharger</a>
+      </article>
+    </section>
+
+    <section class="page-section library-section" aria-labelledby="library-title">
+      <div class="section-heading">
+        <p class="eyebrow">Explorer la bibliothèque</p>
+        <h2 id="library-title">Toutes les ressources</h2>
+        <p class="section-intro">Recherchez un document par son titre, son thème ou son niveau d'étude.</p>
+      </div>
+
+      <nav class="resource-index" aria-label="Catégories de ressources">
+        <a href="#cours">Notes de cours</a>
+        <a href="#exercices">Exercices</a>
+        <a href="#articles">Articles</a>
+        <a href="#presentations">Présentations</a>
+        <a href="#liens">Liens utiles</a>
+      </nav>
+
+      <div class="legend" aria-label="Légende des niveaux">
+        <span class="legend-label">Niveaux :</span>
+        <span class="level level-lycee">Lycée</span>
+        <span class="level level-licence">Licence</span>
+        <span class="level level-master">Master</span>
+        <span class="level level-doctorat">Doctorat</span>
+        <span class="level level-tous">Tous niveaux</span>
+      </div>
+
+      <label class="search-label" for="search">Rechercher dans les ressources</label>
+      <input id="search" class="search-box" type="search" placeholder="Titre, thème, niveau…" aria-label="Rechercher une ressource">
+      <p id="no-result" class="no-result" role="status" aria-live="polite">Aucune ressource ne correspond à votre recherche.</p>
+
+      <section class="resource-section" id="cours" aria-labelledby="courses-title">
+        <h2 id="courses-title">Notes de cours</h2>
+        <div class="card-grid">
+          <a class="card" href="documents/cours-1.pdf">
+            <span class="card-title">Titre du cours 1</span>
+            <span class="card-desc">Courte description du contenu, niveau et public concerné.</span>
+            <span class="card-tags"><span class="level level-lycee">Lycée</span><span class="card-meta">PDF</span></span>
+          </a>
+          <a class="card" href="documents/cours-2.pdf">
+            <span class="card-title">Titre du cours 2</span>
+            <span class="card-desc">Courte description du contenu, niveau et public concerné.</span>
+            <span class="card-tags"><span class="level level-master">Master</span><span class="card-meta">PDF</span></span>
+          </a>
         </div>
-      </div>
-    </article>
+      </section>
 
-    <!-- Légende des niveaux -->
-    <div class="legend" aria-label="Légende des niveaux">
-      <span class="legend-label">Niveaux&nbsp;:</span>
-      <span class="level level-lycee">Lycée</span>
-      <span class="level level-licence">Licence</span>
-      <span class="level level-master">Master</span>
-      <span class="level level-doctorat">Doctorat</span>
-      <span class="level level-tous">Tous niveaux</span>
-    </div>
+      <section class="resource-section" id="exercices" aria-labelledby="exercises-title">
+        <h2 id="exercises-title">Exercices et corrigés</h2>
+        <div class="card-grid">
+          <a class="card" href="documents/exercices-1.pdf">
+            <span class="card-title">Feuille d'exercices 1</span>
+            <span class="card-desc">Exercices associés au cours 1, avec indications.</span>
+            <span class="card-tags"><span class="level level-licence">Licence</span><span class="card-meta">PDF</span></span>
+          </a>
+          <a class="card" href="documents/corriges-1.pdf">
+            <span class="card-title">Corrigés de la feuille 1</span>
+            <span class="card-desc">Solutions détaillées des exercices.</span>
+            <span class="card-tags"><span class="level level-licence">Licence</span><span class="card-meta">PDF</span></span>
+          </a>
+        </div>
+      </section>
 
-    <input id="search" class="search-box" type="search" placeholder="Rechercher (titre, thème, niveau)…" aria-label="Rechercher une ressource">
-    <p id="no-result" class="no-result">Aucune ressource ne correspond à votre recherche.</p>
+      <section class="resource-section" id="articles" aria-labelledby="articles-title">
+        <h2 id="articles-title">Articles et publications</h2>
+        <div class="card-grid">
+          <a class="card" href="documents/article-1.pdf">
+            <span class="card-title">Titre de l'article</span>
+            <span class="card-desc">Auteurs, revue, année. Résumé en une ou deux phrases.</span>
+            <span class="card-tags"><span class="level level-doctorat">Doctorat</span><span class="card-meta">PDF</span></span>
+          </a>
+        </div>
+      </section>
 
-    <!-- Section Notes de cours -->
-    <section class="resource-section" id="cours">
-      <h2>Notes de cours</h2>
-      <div class="card-grid">
-        <a class="card" href="documents/cours-1.pdf">
-          <span class="card-title">Titre du cours 1</span>
-          <span class="card-desc">Courte description du contenu, niveau et public concerné.</span>
-          <span class="card-tags">
-            <span class="level level-lycee">Lycée</span>
-            <span class="card-meta">PDF</span>
-          </span>
-        </a>
-        <a class="card" href="documents/cours-2.pdf">
-          <span class="card-title">Titre du cours 2</span>
-          <span class="card-desc">Courte description du contenu, niveau et public concerné.</span>
-          <span class="card-tags">
-            <span class="level level-master">Master</span>
-            <span class="card-meta">PDF</span>
-          </span>
-        </a>
-      </div>
-    </section>
-
-    <!-- Section Exercices -->
-    <section class="resource-section" id="exercices">
-      <h2>Exercices et corrigés</h2>
-      <div class="card-grid">
-        <a class="card" href="documents/exercices-1.pdf">
-          <span class="card-title">Feuille d'exercices 1</span>
-          <span class="card-desc">Exercices associés au cours 1, avec indications.</span>
-          <span class="card-tags">
-            <span class="level level-licence">Licence</span>
-            <span class="card-meta">PDF</span>
-          </span>
-        </a>
-        <a class="card" href="documents/corriges-1.pdf">
-          <span class="card-title">Corrigés de la feuille 1</span>
-          <span class="card-desc">Solutions détaillées des exercices.</span>
-          <span class="card-tags">
-            <span class="level level-licence">Licence</span>
-            <span class="card-meta">PDF</span>
-          </span>
-        </a>
-      </div>
-    </section>
-
-    <!-- Section Articles -->
-    <section class="resource-section" id="articles">
-      <h2>Articles et publications</h2>
-      <div class="card-grid">
-        <a class="card" href="documents/article-1.pdf">
-          <span class="card-title">Titre de l'article</span>
-          <span class="card-desc">Auteurs, revue, année. Résumé en une ou deux phrases.</span>
-          <span class="card-tags">
-            <span class="level level-doctorat">Doctorat</span>
-            <span class="card-meta">PDF</span>
-          </span>
-        </a>
-      </div>
-    </section>
-
-    <!-- Section Présentations -->
-    <section class="resource-section" id="presentations">
-      <h2>Présentations</h2>
-      <div class="card-grid">
-        <a class="card has-cover" href="documents/presentation-1.pdf">
-          <img class="card-cover" src="images/cover-presentation-1.jpg" alt="Première diapositive : Titre de la présentation">
-          <span class="card-body">
-            <span class="card-title">Titre de la présentation</span>
-            <span class="card-desc">Contexte ou conférence, année.</span>
-            <span class="card-tags">
-              <span class="level level-master">Master</span>
-              <span class="card-meta">PDF</span>
+      <section class="resource-section" id="presentations" aria-labelledby="presentations-title">
+        <h2 id="presentations-title">Présentations</h2>
+        <div class="card-grid">
+          <a class="card has-cover" href="documents/presentation-1.pdf">
+            <img class="card-cover" src="images/cover-presentation-1.jpg" alt="Première diapositive : titre de la présentation" loading="lazy">
+            <span class="card-body">
+              <span class="card-title">Titre de la présentation</span>
+              <span class="card-desc">Contexte ou conférence, année.</span>
+              <span class="card-tags"><span class="level level-master">Master</span><span class="card-meta">PDF</span></span>
             </span>
-          </span>
-        </a>
-        <a class="card" href="documents/presentation-2.pdf">
-          <span class="card-title">Présentation sans image de couverture</span>
-          <span class="card-desc">Cette carte s'affiche sans image.</span>
-          <span class="card-tags">
-            <span class="level level-tous">Tous niveaux</span>
-            <span class="card-meta">PDF</span>
-          </span>
-        </a>
-      </div>
-    </section>
+          </a>
+          <a class="card" href="documents/presentation-2.pdf">
+            <span class="card-title">Présentation sans image de couverture</span>
+            <span class="card-desc">Cette carte s'affiche sans image.</span>
+            <span class="card-tags"><span class="level level-tous">Tous niveaux</span><span class="card-meta">PDF</span></span>
+          </a>
+        </div>
+      </section>
 
-    <!-- Section Liens utiles -->
-    <section class="resource-section" id="liens">
-      <h2>Liens utiles</h2>
-      <div class="card-grid">
-        <a class="card" href="https://arxiv.org" target="_blank" rel="noopener">
-          <span class="card-title">arXiv</span>
-          <span class="card-desc">Archive ouverte de prépublications scientifiques.</span>
-          <span class="card-tags">
-            <span class="level level-doctorat">Doctorat</span>
-            <span class="card-meta">Lien externe</span>
-          </span>
-        </a>
-        <a class="card" href="https://hal.science" target="_blank" rel="noopener">
-          <span class="card-title">HAL</span>
-          <span class="card-desc">Archive ouverte pluridisciplinaire pour la recherche française.</span>
-          <span class="card-tags">
-            <span class="level level-tous">Tous niveaux</span>
-            <span class="card-meta">Lien externe</span>
-          </span>
-        </a>
-      </div>
+      <section class="resource-section" id="liens" aria-labelledby="links-title">
+        <h2 id="links-title">Liens utiles</h2>
+        <div class="card-grid">
+          <a class="card" href="https://arxiv.org" target="_blank" rel="noopener noreferrer">
+            <span class="card-title">arXiv</span>
+            <span class="card-desc">Archive ouverte de prépublications scientifiques.</span>
+            <span class="card-tags"><span class="level level-doctorat">Doctorat</span><span class="card-meta">Lien externe ↗</span></span>
+          </a>
+          <a class="card" href="https://hal.science" target="_blank" rel="noopener noreferrer">
+            <span class="card-title">HAL</span>
+            <span class="card-desc">Archive ouverte pluridisciplinaire pour la recherche française.</span>
+            <span class="card-tags"><span class="level level-tous">Tous niveaux</span><span class="card-meta">Lien externe ↗</span></span>
+          </a>
+        </div>
+      </section>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="footer-inner">
-      © Nans Brucher – <em>Fonction, Institution</em>.
+      <span>© Nans Brucher</span>
+      <span><em>Fonction, Institution</em></span>
     </div>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>
