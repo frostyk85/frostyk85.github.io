@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resources | Nans Brucher</title>
+  <meta name="description" content="Lecture notes, exercises, articles and other scientific resources (EN).">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="alternate" hreflang="fr" href="ressources-fr.html">
+  <link rel="alternate" hreflang="en" href="resources-en.html">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="site-title" href="index.html">Nans Brucher</a>
+      <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+      <nav class="site-nav">
+        <a href="index.html">Home</a>
+        <a href="enseignement.html">Teaching</a>
+        <a href="ressources-fr.html">Ressources (FR)</a>
+        <a class="active" href="resources-en.html">Resources (EN)</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="banner">
+    <div class="banner-inner">
+      <h1>Resources</h1>
+      <p>Lecture notes, problem sets, articles and other documents for free download.</p>
+    </div>
+  </section>
+
+  <main id="main-content">
+    <article class="spotlight">
+      <a class="spotlight-cover" href="documents/cours-1.pdf" target="_blank" rel="noopener" aria-label="Open PDF: Scientific Resources Document">
+        <img src="images/cover-ressource.jpg" alt="Cover image: Scientific Resources Document">
+      </a>
+      <div class="spotlight-body">
+        <span class="kicker">Featured</span>
+        <h2 class="spotlight-title">Scientific Resources Document</h2>
+        <div class="tags">
+          <span class="level level-tous">All levels</span>
+          <span class="tag">PDF</span>
+          <span class="tag">17 pages</span>
+        </div>
+        <p class="spotlight-desc">
+          Document listing the most relevant resources in math and physics for all levels and interests.
+        </p>
+        <p class="spotlight-meta">Updated July 2026</p>
+        <div class="actions">
+          <a class="button button-red" href="documents/Document-ressources-STEM.pdf" target="_blank" rel="noopener">Open PDF</a>
+          <a class="button button-outline" href="documents/Document-ressources-STEM.pdf" download>Download</a>
+        </div>
+      </div>
+    </article>
+
+    <div class="legend" aria-label="Levels legend">
+      <span class="legend-label">Levels:</span>
+      <span class="level level-lycee">High school</span>
+      <span class="level level-licence">Bachelor</span>
+      <span class="level level-master">Master</span>
+      <span class="level level-doctorat">Doctorate</span>
+      <span class="level level-tous">All levels</span>
+    </div>
+
+    <input id="search" class="search-box" type="search" placeholder="Search (title, topic, level)..." aria-label="Search resources">
+    <p id="no-result" class="no-result">No resource matches your search.</p>
+
+    <section class="resource-section" id="cours">
+      <h2>Lecture notes</h2>
+      <div class="card-grid">
+        <a class="card" href="documents/cours-1.pdf">
+          <span class="card-title">Course Title 1</span>
+          <span class="card-desc">Brief description of content and intended audience.</span>
+          <span class="card-tags">
+            <span class="level level-lycee">High school</span>
+            <span class="card-meta">PDF</span>
+          </span>
+        </a>
+        <a class="card" href="documents/cours-2.pdf">
+          <span class="card-title">Course Title 2</span>
+          <span class="card-desc">Brief description of content and intended audience.</span>
+          <span class="card-tags">
+            <span class="level level-master">Master</span>
+            <span class="card-meta">PDF</span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <section class="resource-section" id="exercices">
+      <h2>Exercises and Solutions</h2>
+      <div class="card-grid">
+        <a class="card" href="documents/exercices-1.pdf">
+          <span class="card-title">Problem Set 1</span>
+          <span class="card-desc">Exercises for Course 1, with hints.</span>
+          <span class="card-tags">
+            <span class="level level-licence">Bachelor</span>
+            <span class="card-meta">PDF</span>
+          </span>
+        </a>
+        <a class="card" href="documents/corriges-1.pdf">
+          <span class="card-title">Solutions to Set 1</span>
+          <span class="card-desc">Detailed solutions to the exercises.</span>
+          <span class="card-tags">
+            <span class="level level-licence">Bachelor</span>
+            <span class="card-meta">PDF</span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <section class="resource-section" id="articles">
+      <h2>Articles and Publications</h2>
+      <div class="card-grid">
+        <a class="card" href="documents/article-1.pdf">
+          <span class="card-title">Article Title</span>
+          <span class="card-desc">Authors, journal, year. One-sentence summary.</span>
+          <span class="card-tags">
+            <span class="level level-doctorat">Doctorate</span>
+            <span class="card-meta">PDF</span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <section class="resource-section" id="presentations">
+      <h2>Presentations</h2>
+      <div class="card-grid">
+        <a class="card has-cover" href="documents/presentation-1.pdf">
+          <img class="card-cover" src="images/cover-presentation-1.jpg" alt="First slide: Presentation title">
+          <span class="card-body">
+            <span class="card-title">Presentation Title</span>
+            <span class="card-desc">Conference or context, year.</span>
+            <span class="card-tags">
+              <span class="level level-master">Master</span>
+              <span class="card-meta">PDF</span>
+            </span>
+          </span>
+        </a>
+        <a class="card" href="documents/presentation-2.pdf">
+          <span class="card-title">Presentation without cover image</span>
+          <span class="card-desc">This card displays without an image.</span>
+          <span class="card-tags">
+            <span class="level level-tous">All levels</span>
+            <span class="card-meta">PDF</span>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <section class="resource-section" id="liens">
+      <h2>Useful Links</h2>
+      <div class="card-grid">
+        <a class="card" href="https://arxiv.org" target="_blank" rel="noopener">
+          <span class="card-title">arXiv</span>
+          <span class="card-desc">Open archive for scientific preprints.</span>
+          <span class="card-tags">
+            <span class="level level-doctorat">Doctorate</span>
+            <span class="card-meta">External Link</span>
+          </span>
+        </a>
+        <a class="card" href="https://hal.science" target="_blank" rel="noopener">
+          <span class="card-title">HAL</span>
+          <span class="card-desc">French open archive for research publications.</span>
+          <span class="card-tags">
+            <span class="level level-tous">All levels</span>
+            <span class="card-meta">External Link</span>
+          </span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      © Nans Brucher – <em>Position, Institution</em>.
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
