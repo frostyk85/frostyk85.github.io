@@ -1,24 +1,38 @@
-# Site personnel – ressources scientifiques
+# Nans Brucher — site personnel
 
-Site statique (HTML, CSS, JavaScript) sans dépendance, prêt pour GitHub Pages.
-Couleur principale : `#5C5D8D` (variable `--accent` en haut de `style.css`).
+Site statique bilingue (français / anglais), construit en HTML, CSS et JavaScript et déployable sur GitHub Pages.
 
-## Structure
+## Pages
 
-```
-index.html        Page de présentation
-ressources.html   Page des documents PDF et autres ressources
-style.css         Styles (couleurs, mise en page)
-script.js         Menu mobile et recherche
-documents/        Tes fichiers PDF (à créer)
-images/           Ta photo (à créer)
-```
+| Français | English |
+|---|---|
+| `index.html` — Présentation | `home-en.html` — About |
+| `enseignement.html` — Enseignement | `teaching-en.html` — Teaching |
+| `ressources-fr.html` — Bibliothèque française | `resources-en.html` — English library |
 
-## Personnaliser
+Chaque page possède un sélecteur de langue qui mène à la page correspondante, et non à une page de ressources générique.
 
-1. Remplace « Prénom Nom », la fonction, l'institution et le courriel dans `index.html` et `ressources.html`.
-2. Ajoute ta photo dans `images/photo.jpg` et remplace le bloc `<div class="portrait">` par
-   `<img src="images/photo.jpg" alt="Portrait">`.
-3. Dépose tes PDF dans `documents/` et adapte les liens des cartes dans `ressources.html`.
-   Pour ajouter une ressource, copie un bloc `<a class="card">…</a>`.
-4. Pour changer la couleur, modifie `--accent` (et `--accent-dark`) dans `style.css`.
+## Design
+
+- Space Grotesk pour les titres et le texte.
+- DM Mono pour les repères, métadonnées et éléments d'interface.
+- Palette papier / encre, violet profond et orange brûlé.
+- Mise en page responsive et navigation mobile.
+
+## Documents actuellement présents
+
+Les fichiers présents dans `documents/` sont les originaux français :
+
+- `Document ressources STEM.pdf`
+- `Th. Catégories et physique.pdf`
+
+La bibliothèque anglaise est distincte et indique explicitement lorsqu'une traduction PDF n'est pas encore disponible. Ne pas présenter un original français comme une traduction anglaise.
+
+## Modifier le site
+
+- Styles : `style.css`
+- Navigation mobile et recherche : `script.js`
+- Documents PDF : `documents/`
+- Images : `images/`
+
+Pour publier une traduction anglaise, ajouter le PDF traduit dans `documents/`, puis créer une carte correspondante dans `resources-en.html`.
