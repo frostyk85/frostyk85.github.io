@@ -1,42 +1,40 @@
-// Menu mobile
-const toggle = document.querySelector('.nav-toggle');
-const nav = document.querySelector('.site-nav');
-if (toggle && nav) {
-  toggle.addEventListener('click', () => {
-    const open = nav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+// script.js
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Menu hamburger accessible
+  const navToggle = document.querySelector('.nav-toggle');
+  const siteNav = document.querySelector('.site-nav');
+  const htmlLang = document.documentElement.lang;
+  // Libellés selon la langue
+  const labels = {
+    fr: { open: 'Ouvrir le menu', close: 'Fermer le menu' },
+    en: { open: 'Open menu', close: 'Close menu' }
+  };
+  const locale = (htmlLang === 'fr') ? 'fr' : 'en';
+
+  navToggle.addEventListener('click', function() {
+    const expanded = this.getAttribute('aria-expanded') === 'true';
+    this.setAttribute('aria-expanded', String(!expanded));
+    this.setAttribute('aria-label', expanded ? labels[locale].open : labels[locale].close);
+    document.body.classList.toggle('nav-open');
   });
-}
 
-// Recherche dans les ressources
-const search = document.getElementById('search');
-if (search) {
-  const cards = document.querySelectorAll('.card');
-  const sections = document.querySelectorAll('.resource-section');
-  const empty = document.getElementById('no-result');
-  const spotlight = document.getElementById('spotlight');
-
-  const normalise = (s) =>
-    s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
-
-  search.addEventListener('input', () => {
-    const q = normalise(search.value.trim());
-    let total = 0;
-
-    // Masque le bloc « À la une » pendant une recherche
-    if (spotlight) spotlight.style.display = q ? 'none' : '';
-
-    cards.forEach((card) => {
-      const match = normalise(card.textContent).includes(q);
-      card.style.display = match ? '' : 'none';
-      if (match) total++;
+  // Recherche de ressources (functionne sur FR et EN)
+  const searchInput = document.getElementById('search');
+  const noResult = document.getElementById('no-result');
+  if (searchInput) {
+    searchInput.addEventListener('input', function() {
+      const query = this.value.trim().toLowerCase();
+      const cards = document.querySelectorAll('.card');
+      let anyVisible = false;
+      cards.forEach(card => {
+        const text = card.innerText.toLowerCase();
+        const match = text.includes(query);
+        card.style.display = match ? 'block' : 'none';
+        if (match) anyVisible = true;
+      });
+      // Afficher ou non le message "Aucun résultat"
+      noResult.style.display = anyVisible ? 'none' : 'block';
     });
-
-    sections.forEach((section) => {
-      const visible = section.querySelectorAll('.card:not([style*="none"])').length;
-      section.style.display = visible ? '' : 'none';
-    });
-
-    if (empty) empty.style.display = total ? 'none' : 'block';
-  });
-}
+  }
+});
