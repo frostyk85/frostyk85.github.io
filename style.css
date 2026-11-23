@@ -1088,3 +1088,230 @@ main { width: min(100% - 3rem, 1120px); }
   main { width: min(100% - 2rem, 1120px); }
   .banner { padding: 4rem 1rem; }
 }
+
+
+/* ------------------------------------------------------------------
+   ART DIRECTION / 03 — academic blue
+   Typographie de revue scientifique et palette bleu nuit / ardoise.
+   ------------------------------------------------------------------ */
+:root {
+  color-scheme: light;
+  --color-text: #1c2b3d;
+  --color-muted: #58697b;
+  --color-bg: #e9edf1;
+  --color-surface: #f8f7f2;
+  --color-surface-soft: #dce4eb;
+  --color-border: #bdc9d4;
+  --color-accent: #315b7d;
+  --color-accent-dark: #183653;
+  --color-accent-soft: #dce7ef;
+  --color-highlight: #a9c2d4;
+  --ink: #152b42;
+  --paper: #e9edf1;
+  --orange: #bd8958;
+  --violet: #315b7d;
+  --mono: "IBM Plex Mono", "Courier New", monospace;
+  --display: "Source Serif 4", Georgia, serif;
+  --radius: 4px;
+  --radius-small: 3px;
+  --shadow-soft: 5px 6px 0 rgba(21,43,66,.09);
+  --shadow-hover: 8px 9px 0 rgba(21,43,66,.15);
+}
+body {
+  color: var(--ink);
+  background-color: var(--paper);
+  background-image:
+    linear-gradient(rgba(49,91,125,.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(49,91,125,.035) 1px, transparent 1px);
+  background-size: 28px 28px;
+  font-family: "IBM Plex Sans", Arial, sans-serif;
+  font-size: 1.02rem;
+  line-height: 1.78;
+}
+body::before {
+  opacity: .08;
+  background: repeating-linear-gradient(0deg, transparent 0 4px, rgba(21,43,66,.06) 4px 5px);
+}
+h1,h2,h3,.site-title,.card-title {
+  font-family: var(--display);
+  font-weight: 600;
+  letter-spacing: -.035em;
+}
+h1 { font-size: clamp(3rem, 8vw, 6.2rem); line-height: .98; }
+h2 { font-size: clamp(2rem, 4vw, 3.15rem); line-height: 1.08; }
+h3 { font-size: 1.55rem; line-height: 1.2; }
+.lead { color: #30465c; }
+.site-header {
+  background: rgba(233,237,241,.96);
+  border-bottom: 2px solid var(--ink);
+}
+.site-title {
+  font-size: 1.42rem;
+  letter-spacing: -.04em;
+}
+.site-nav a {
+  font-family: "IBM Plex Sans", Arial, sans-serif;
+  font-weight: 600;
+  letter-spacing: .015em;
+  text-transform: none;
+}
+.site-nav a:hover,.site-nav a.active {
+  color: #f4f5f4;
+  background: var(--color-accent-dark);
+}
+.banner {
+  color: #f5f4ef;
+  background:
+    linear-gradient(110deg, rgba(13,31,51,.98), rgba(25,55,82,.97) 62%, rgba(43,82,112,.96)),
+    var(--ink);
+}
+.banner::before {
+  border-color: rgba(195,214,228,.32);
+  box-shadow: 18px 18px 0 -17px var(--orange), 36px 36px 0 -35px rgba(195,214,228,.55);
+}
+.banner::after {
+  border-color: rgba(189,137,88,.48);
+}
+.banner .eyebrow { color: #c5d8e6; }
+.banner h1 { letter-spacing: -.045em; }
+.eyebrow,.kicker,.card-meta,.legend-label,.search-label {
+  font-family: var(--mono);
+  letter-spacing: .035em;
+}
+.eyebrow { color: var(--color-accent); }
+.section-heading { border-left-color: var(--orange); }
+.card,.spotlight,.contact-panel,.info-list li {
+  border-color: #aebdca;
+  border-radius: 3px;
+}
+.card {
+  background: rgba(248,247,242,.96);
+}
+.card:hover,.card:focus-visible {
+  border-color: var(--color-accent);
+  background: #fffefa;
+}
+.card-title {
+  color: var(--color-accent-dark);
+  font-size: 1.42rem;
+}
+.card-meta,.kicker { color: var(--color-accent); }
+.spotlight {
+  background: #dce5eb;
+  box-shadow: 8px 8px 0 var(--orange);
+}
+.spotlight-title { color: var(--color-accent-dark); }
+.tag,.level {
+  border-radius: 2px;
+  font-family: var(--mono);
+  font-size: .7rem;
+  font-weight: 500;
+}
+.tag { color: #294c68; background: #e1eaf0; border-color: #b9cbd8; }
+.button {
+  border-radius: 3px;
+  font-family: "IBM Plex Sans", Arial, sans-serif;
+  font-weight: 650;
+}
+.button-red {
+  border-color: var(--color-accent-dark);
+  background: var(--color-accent-dark);
+}
+.button-red:hover,.button-red:focus-visible {
+  border-color: #0d2034;
+  background: #0d2034;
+}
+.button-outline {
+  border-color: #8097aa;
+  color: var(--color-accent-dark);
+}
+.button-outline:hover,.button-outline:focus-visible {
+  background: #dce7ef;
+}
+.search-box {
+  border-color: #aebdca;
+  border-radius: 3px;
+  background-color: var(--color-surface);
+  font-family: "IBM Plex Sans", Arial, sans-serif;
+}
+.resource-index a {
+  border-color: #9fb2c2;
+  border-radius: 3px;
+  color: var(--color-accent-dark);
+  font-family: var(--mono);
+}
+.resource-index a:hover { color: #f4f5f4; background: var(--color-accent-dark); }
+.portrait {
+  border-color: #aebdca;
+  border-radius: 3px;
+  color: #405b73;
+  background: linear-gradient(145deg, #dce5eb, #cbd8e2);
+  font-family: var(--display);
+}
+.site-footer {
+  border-top: 2px solid var(--ink);
+  color: #d9e2e9;
+  background: #142a41;
+  font-family: "IBM Plex Sans", Arial, sans-serif;
+}
+.language-switch {
+  border-color: var(--ink);
+  font-family: var(--mono);
+}
+.language-switch a[aria-current="page"] {
+  color: #f4f5f4;
+  background: var(--color-accent-dark);
+}
+.language-switch a:not([aria-current="page"]):hover {
+  color: #fff;
+  background: var(--color-accent);
+}
+.nav-toggle { border-color: #9fb2c2; border-radius: 3px; }
+.contact-panel {
+  background: rgba(248,247,242,.96);
+}
+.cv-contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+.cv-card,.contact-card {
+  position: relative;
+  min-width: 0;
+  padding: clamp(1.35rem,3vw,2rem);
+  border: 1.5px solid var(--ink);
+  border-radius: 3px;
+  background: var(--color-surface);
+  box-shadow: 6px 6px 0 rgba(21,43,66,.09);
+}
+.cv-card::before,.contact-card::before {
+  position: absolute;
+  top: -1.5px;
+  left: 1.2rem;
+  width: 2.7rem;
+  height: 4px;
+  background: var(--orange);
+  content: "";
+}
+.cv-card h3,.contact-card h3 {
+  margin: .25rem 0 .65rem;
+  color: var(--color-accent-dark);
+  font-family: var(--display);
+  font-size: 1.75rem;
+}
+.cv-card p,.contact-card p { color: var(--color-muted); }
+.cv-card .eyebrow,.contact-card .eyebrow { margin-bottom: .6rem; }
+.contact-placeholder {
+  padding: .75rem .9rem;
+  border-left: 3px solid var(--orange);
+  color: #43586b;
+  background: #e7edf1;
+  font-size: .92rem;
+}
+@media(max-width:760px) {
+  .site-nav { background: var(--paper); border: 2px solid var(--ink); }
+}
+@media(max-width:600px) {
+  .cv-contact-grid { grid-template-columns: 1fr; }
+}
