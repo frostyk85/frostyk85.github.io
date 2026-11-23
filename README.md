@@ -14,9 +14,9 @@ Chaque page possède un sélecteur de langue qui mène à la page correspondante
 
 ## Design
 
-- Space Grotesk pour les titres et le texte.
-- DM Mono pour les repères, métadonnées et éléments d'interface.
-- Palette papier / encre, violet profond et orange brûlé.
+- Source Serif 4 pour les titres, IBM Plex Sans pour le texte et IBM Plex Mono pour les repères.
+- Palette bleu nuit / ardoise, fond papier froid et accent cuivre discret.
+- Sections CV et contact sur les pages d'accueil française et anglaise.
 - Mise en page responsive et navigation mobile.
 
 ## Documents actuellement présents
